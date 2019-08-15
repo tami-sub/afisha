@@ -1,0 +1,35 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Sign in
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <div class="back-button">
+            <button ><a href="/">Назад</a></button>
+            <h2>Форма входа</h2>
+        </div>
+        <hr/>
+        <form method="post">{% csrf_token %}
+
+            <div id="register">
+                <div>
+                    <label id="Your_name" >Your login: </label>
+                    <input id="Your_name" type="text" name="{{ form.name.html_name }}" maxlength="100" required>
+                </div>
+                <div>
+                    <label id="Your_name" >Your password: </label>
+                    <input id="Your_name" type="password" name="{{ form.password.html_name }}" maxlength="100" required>
+                </div>
+                <input class="button" id="ok" type="submit" value="OK">
+            </div>
+
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

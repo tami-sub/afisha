@@ -1,0 +1,73 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Rewrite schedule
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="moderpanel">Назад</a></button>
+        <h2>Добавить Фильм</h2>
+
+    </div>
+
+        <hr/>
+        <form method="post">{% csrf_token %}
+            <div id="register">
+
+                <label for="movie">Выберите название Фильма</label>
+{#                <select id="movie" name="{{ form.moviename.html_name }}">#}
+{#                <option id="movie" disabled selected="selected">Выберите Фильм</option>#}
+{#                   {% for i in cinemaschedule.values%}#}
+{#                    {% for k in i.values %}#}
+{#                        {% for j in k.values %}#}
+{##}
+{##}
+{#                            {% if j.keys != none %}#}
+{#                                <option id="movie" value="{{ j.moviename }}###{{ j.jenre }}###{{ j.dimension }}###{{ j.year }}###{{ j.timing }}###{{ j.cinemaid }}">{{ j.moviename }}</option>#}
+{#                            {% endif %}#}
+{#                            {% endfor %}#}
+{#                        {% endfor %}#}
+{#                   {% endfor %}#}
+{#                </select>#}
+
+                <select id="movie" name="{{ form.moviename.html_name }}">
+                <option id="movie" disabled selected="selected">Выберите Фильм</option>
+                   {% for i in cinemaschedule.movie.values%}
+                    {% for j in i.values %}
+                        <option id="movie" value="{{ j.moviename }}###{{ j.jenre }}###{{ j.dimension }}###{{ j.year }}###{{ j.timing }}###{{ j.cinemaid }}">{{ j.moviename }}</option>
+                        {% endfor %}
+                   {% endfor %}
+                </select>
+
+<label for="day">Выберите день недели</label>
+
+
+
+                <select id="day" name="{{ form.day.html_name }}">
+                <option id="day" disabled selected="selected">Выберите день</option>
+                    <option id="day" value="Понедельник">Понедельник</option>
+                    <option id="day" value="Вторник">Вторник</option>
+                    <option id="day" value="Среда">Среда</option>
+                    <option id="day" value="Четверг">Четверг</option>
+                    <option id="day"  value="Пятница">Пятница</option>
+                    <option id="day"  value="Суббота">Суббота</option>
+                    <option id="day" value="Воскресенье">Воскресенье</option>
+                </select>
+
+                <input name="{{ form.time.html_name }}" placeholder="Время начала сеанса" required>
+                <input name="{{ form.price.html_name }}" placeholder="Цена" required>
+
+                 <input id="ok" type="submit" value="OK">
+
+            </div>
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

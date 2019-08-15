@@ -1,0 +1,35 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Admin
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <div class="back-exit">
+            <h2>Панель Администратора {{ temp.name }}</h2>
+
+            <button type="submit" ><a href="exit">Выход</a></button>
+        </div>
+        <hr/>
+        <div id="adminpanel">
+            <div class="box">
+                <h3>Добавление Модератора</h3>
+                <a href="newmoder"><button class="button">Добавить</button></a>
+            </div>
+            <div class="box">
+                <h3>Список аккаунтов</h3>
+                <a href="accounts"><button class="button">Добавить</button></a>
+            </div>
+            <div class="box">
+                <h3>Добавление Кинотеатра</h3>
+                <a href="addcinema"><button class="button">Добавить</button></a>
+            </div>
+        </div>
+    </article>
+    </div>
+
+
+{% endblock %}

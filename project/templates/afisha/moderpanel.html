@@ -1,0 +1,51 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Moder
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <div class="back-exit">
+            <h2>Панель Модератора {{ temp.name }}</h2>
+            <button><a href="exit">Выход</a></button>
+        </div>
+
+        <hr/>
+        <div id="adminpanel">
+            <div class="box">
+                <h3>Добавление Фильма</h3>
+                <a href="addmovie"><button class="button">Добавить</button></a>
+            </div>
+
+            <div class="box">
+
+                <form method="post">{% csrf_token %}
+
+
+                    <h3>Изменить расписание</h3>
+                    <select name="{{form.cinemaid.html_name}}">
+                        {% for i in cinema.values %}
+                        <option value="{{ i.cinemaid }}">{{ i.cinemaname }}</option>
+                        {% endfor %}
+                    </select>
+
+
+
+                    <input id="schedule-button" class="button" type="submit" value="Перейти ">
+                </form>
+
+            </div>
+
+        <form method="post">{% csrf_token %}
+
+
+                </form>
+        </div>
+    </article>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Accounts
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <div class="back-button">
+            <button><a href="adminpanel">Назад</a></button>
+            <h2>Аккаунты</h2>
+        </div>
+        <hr/>
+        <form method="post">{% csrf_token %}
+                <div id="accounts">
+                <table>
+                <caption>Администратор</caption>
+                    {% for i in admin.values  %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.sessiontime }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <table>
+                <caption>Модераторы</caption>
+                    {% for i in moder.values  %}
+                    <tr>
+                        <td><form method="post">{% csrf_token %}<input name="name" type="submit" value="{{ i.name }}"></form>
+{#                            {{ i.name }}#}
+                        </td>
+                        <td>{{ i.sessiontime }}</td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+
+                <table>
+                <caption>Пользователи</caption>
+                    {% for i in users.values  %}
+                    <tr>
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.sessiontime }}</td>
+
+                    </tr>
+                    {% endfor %}
+                </table>
+                </div>
+
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

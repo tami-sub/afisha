@@ -1,0 +1,187 @@
+body{
+    background-color: lavender;
+    background: url("../img/Will-Lianne-dark-sunset-and-cam.jpg") center top fixed no-repeat;
+
+}
+#wrapper {
+    margin: 0 auto;
+    width: 948px;             /*57%*/
+    background-image: url(../img/page_back.png);
+        border-radius: 18px;
+}
+article {
+    padding: 1% 2% 2% 2%;
+    color: white;
+}
+#inside {
+    margin-top: -8px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+footer{
+    color: whitesmoke;
+   padding-bottom: 22px;
+}
+footer span {
+    margin-right: 26px;
+    background-image: url(../img/box_bg.png);
+    border-radius: 5px;
+}
+#content-box {
+    background-image: url(../img/box_bg.png);
+    position: relative;
+    width: 910px;
+    margin-left: 18px;
+    border-radius: 32px;
+}
+#register{
+    width: 20%;
+    margin: 0 auto;
+}
+#accounts{
+    width: 20%;
+    margin: auto;
+    margin-left: 16%;
+    display: flex;
+}
+#accounts table{
+    margin-right: 30%;
+    text-align: center;
+}
+#accounts table td {
+    border-right: aliceblue;
+    border-right-width: 2px;
+    border-right-style: groove;
+    border-left: aliceblue;
+    border-left-width: 2px;
+    border-left-style: groove;
+    border-bottom: aliceblue;
+    border-bottom-width: 1px;
+    border-bottom-style: groove;
+    border-radius: 5px;
+    opacity: 0.7;
+}
+#accounts table td:hover {
+    opacity: 1;
+}
+caption{
+    font-size: 25px;
+}
+input {
+    margin: 2px 0;
+    padding: 4px;
+    border-radius: 5px;
+    outline-color: #993a52;
+}
+#ok{
+    width: 28%;
+    height: 80%;
+    border-radius: 5px;
+}
+#Your_name{
+    border-radius: 5px;
+    outline-color: #993a52;
+}
+.box{
+    border-radius: 5px;
+    border-style: dashed;
+    border-width: 2px;
+    width: fit-content;
+    padding: 5px;
+    margin: 4%;
+}
+.button{
+    opacity: 0.7;
+    border-radius: 5px;
+    border-style: double;
+    outline-style: none;
+
+}
+.button:hover{
+    opacity: 0.8;
+}
+#adminpanel{
+    display: flex;
+}
+.back-button{
+    display: flex;
+}
+.back-button button{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 2%;
+}
+
+
+.back-exit{
+    display: flex;
+    justify-content: space-between;
+}
+.back-exit button{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+button{
+    opacity: 0.7;
+    border-radius: 5px;
+    border-style: double;
+    outline-style: none;
+}
+button:hover{
+    opacity: 0.8;
+}
+
+a {
+    text-decoration: none;
+        color: black;
+}
+.cinemahead{
+    display: inline;
+}
+span#razv div {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#cinema {
+    display:inline-block;
+}
+#cinema li {
+    border-color: #FF9800;
+    border-width: 2px;
+    border-style: groove;
+    padding: 5px;
+    list-style-type: none;
+}
+
+#afisha td {
+    border: #FF9800 groove 2px;
+    padding: 5px;
+    border-radius: 7px;
+}
+#afisha{
+    display: inline-flex;
+}
+#cinemalist{
+    margin-top: 20px;
+    text-align: center;
+
+
+        display: flex;
+    justify-content: space-between;
+
+}
+
+#invisible{
+    display: none;
+}
+#schedule-button{
+    padding: 1px 6px;
+}
+
+select#day {
+    opacity: 0.8;
+    height: 22px;
+}

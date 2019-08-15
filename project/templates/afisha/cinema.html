@@ -1,0 +1,55 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Cinema
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="/">Назад</a></button>
+        <h2>Кинотеатр {{ current.cinemaname }}</h2>
+    </div>
+
+    <div>
+
+        {% for i in current.movie.values %}
+            {% for j in i.values %}
+                                              <hr/>
+
+                                         <table id="afisha">
+                                         <tr>
+                                                <td>{{ j.moviename }}</td>
+                                                <td>Жанр: {{ j.jenre }}</td>
+                                                <td>{{ j.dimension }}D</td>
+                                                <td>Хронометраж: {{ j.timing }} мин.</td>
+                                                <td>Год: {{ j.year }}</td>
+
+                                         </tr>
+                                         </table>
+
+
+{#                                           <ul id="kekus"   >#}
+{#                                                 <li>Название: {{ j.moviename }}</li>#}
+{#                                                 <li>Жанр: {{ j.jenre }}</li>#}
+{#                                                 <li>Формат: {{ j.dimension }}D</li>#}
+{#                                                 <li>Хронометраж: {{ j.timing }}</li>#}
+{#                                                 <li>Режиссер(ы): {{ j.directors }}</li>#}
+{#                                                 <li>Актёры: {{ j.actors }}</li>#}
+{#                                                 <li>График: {{ j.schedule }}</li>#}
+{#                                                 <li>Идентификатор кинотетра: {{ j.cinemaid }}</li>#}
+{#                                            </ul>#}
+                                        {% endfor %}
+        {% endfor %}
+
+
+    <hr/>
+    </div>
+    </article>
+    </div>
+
+
+{% endblock %}

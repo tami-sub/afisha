@@ -1,0 +1,19 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Admin
+{% endblock %}
+
+{% block content %}
+
+    <form method="post" id="kekus">{% csrf_token %}
+        <article>
+            <div align="center">
+        <h2>Подтвердите выход</h2>
+                <input class="button" type="submit" value="Подтверждаю">
+                </div>
+        </article>
+
+    </form>
+
+{% endblock %}

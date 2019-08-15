@@ -1,0 +1,36 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Moder creation
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="adminpanel">Назад</a></button>
+        <h2>Создание Модератора</h2>
+
+    </div>
+        <hr/>
+        <form method="post">{% csrf_token %}
+            <div id="register">
+                <div>
+                    <label id="Your_name" >Enter login: </label>
+                    <input id="Your_name" type="text" name="{{ form.name.html_name }}" maxlength="100" required>
+                </div>
+                <div>
+                    <label id="Your_name" >Enter Password: </label>
+                    <input id="Your_name" type="password" name="{{ form.password.html_name }}" maxlength="100" required>
+                </div>
+                <input class="button" id="ok" type="submit" value="OK">
+            </div>
+
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

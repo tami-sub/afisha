@@ -1,0 +1,139 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Add movie
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="moderpanel">Назад</a></button>
+        <h2>Добавить Фильм</h2>
+
+    </div>
+
+        <hr/>
+        <form method="post">{% csrf_token %}
+            <div id="register">
+                <div>
+                    <label>Название Фильма: </label>
+                    <input type="text" name="{{ form.moviename.html_name }}" maxlength="100" required>
+                </div>
+                <div>
+                    <label>Жанр: </label>
+                    <input  type="text" name="{{ form.jenre.html_name }}" maxlength="100" required>
+                </div>
+
+                <div>
+                    <label>Измерение(D): </label>
+                    <input type="number" name="{{ form.dimension.html_name }}" maxlength="100" required>
+                </div>
+
+                 <div>
+                    <label>Хронометраж: </label>
+                    <input type="number" name="{{ form.timing.html_name }}" maxlength="100" required>
+                 </div>
+
+                 <div>
+                    <label>Режиссер(ы): </label>
+                    <input  type="text" name="{{ form.directors.html_name }}" maxlength="100" required>
+                 </div>
+
+                 <div>
+                    <label>Актёры: </label>
+                    <input  type="text" name="{{ form.actors.html_name }}" maxlength="100" required>
+                 </div>
+                <div>
+                    <label>Год выхода: </label>
+                    <input  type="text" name="{{ form.year.html_name }}" maxlength="100" required>
+                 </div>
+                <div>
+                    <label>Идентификатор кинотеатра: </label>
+                    <input type="number" name="{{ form.cinemaid.html_name }}" maxlength="100" required>
+                 </div>
+
+                <input class="button" id="ok" type="submit" value="OK">
+            </div>
+
+
+{#            {% for i in cinema.values %}#}
+{#               {% for k in i.movie.values %}#}
+{#                  {% for j in k.values %}#}
+{#                      <ul>#}
+{#                          <li>{{ j.moviename }}</li>#}
+{#                          <li>{{ j.jenre }}</li>#}
+{#                      </ul>#}
+{#                  {% endfor %}#}
+{#               {% endfor %}#}
+{#            {% endfor %}#}
+
+            <span id="razv" onclick='wrt("<div>\n"+
+                    "        {% for i in cinema.values %}\n"+
+                "            <ul class=\"cinemahead\">\n"+
+                "                <li><h3>Кинотеатр: {{ i.cinemaname }}</h3></li>\n"+
+                "            <li>Жанры: {% for t in  i.movie.keys %}/\n"+
+                    "                                             {{ t }}\n"+
+                    "                                            {% endfor %}</li>\n"+
+                "             <li>Идентификатор:{{ i.cinemaid }}</li>\n"+
+                "            </ul>\n"+
+                "                           {% for k in i.movie.values %}\n"+
+                    "\n"+
+                    "\n"+
+                    "                                     {% for j in k.values %}\n"+
+                        "                                              <hr/>\n"+
+                        "                                           <ul>\n"+
+                        "                                                 <li>Название Фильма: {{ j.moviename }}</li>\n"+
+                        "                                                 <li>Жанр Фильма: {{ j.jenre }}</li>\n"+
+                        "                                                 <li>Формат: {{ j.dimension }}D</li>\n"+
+                        "                                                 <li>Хронометраж: {{ j.timing }}</li>\n"+
+                        "                                                 <li>Режиссер(ы): {{ j.directors }}</li>\n"+
+                        "                                                 <li>Актёры: {{ j.actors }}</li>\n"+
+                        "                                                 <li>Год: {{ j.year }}</li>\n"+
+                        "                                                 <li>Идентификатор кинотетра: {{ j.cinemaid }}</li>\n"+
+                        "                                            </ul>\n"+
+                        "                                        {% endfor %}\n"+
+                    "                                   {% endfor %}\n"+
+                "                           {% endfor %}\n"+
+                    "    </div>");'>/Список Фильмов/</span>
+            <br>
+            <span id="sver" onclick='wrt("");'></span>
+
+
+
+{#    <div>#}
+{#        {% for i in cinema.values %}#}
+{#            <ul class="cinemahead">#}
+{#                <li>Кинотеатр: {{ i.cinemaname }}</li>#}
+{#            <li>Жанры: {% for t in  i.movie.keys %}#}
+{#                                             {{ t }}#}
+{#                                            {%endfor%}</li>#}
+{#            </ul>#}
+{#                           {% for k in i.movie.values %}#}
+{##}
+{##}
+{#                                     {% for j in k.values %}#}
+{#                                              <hr/>#}
+{#                                           <ul>#}
+{#                                                 <li>Название Фильма: {{ j.moviename }}</li>#}
+{#                                                 <li>Жанр Фильма: {{ j.jenre }}</li>#}
+{#                                                 <li>Формат: {{ j.dimension }}D</li>#}
+{#                                                 <li>Хронометраж: {{ j.timing }}</li>#}
+{#                                                 <li>Режиссер(ы): {{ j.directors }}</li>#}
+{#                                                 <li>Актёры: {{ j.actors }}</li>#}
+{#                                                 <li>График: {{ j.schedule }}</li>#}
+{#                                                 <li>Идентификатор кинотетра: {{ j.cinemaid }}</li>#}
+{#                                            </ul>#}
+{#                                        {% endfor %}#}
+{#                                   {% endfor %}#}
+{#                           {% endfor %}#}
+{#    </div>#}
+
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

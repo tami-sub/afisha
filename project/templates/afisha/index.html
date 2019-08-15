@@ -1,0 +1,52 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Home
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <br/>
+            <a href="/register"><button>Register</button></a>
+            <a href="/signin"><button>Sign in</button></a>
+            <a href="/afisha"><button>Afisha</button></a>
+        <br/>
+<hr/>
+    <br/>
+    <form method="post">{% csrf_token %}
+{#        <select name="cinemaname">#}
+{#                    <option value="s1">Понедельник</option>#}
+{#        </select>#}
+    </form>
+
+
+
+        <div id="cinemalist">
+        {% for i in cinema.values %}
+            <form method="post">{% csrf_token %}
+            <div id="afisha">
+            <table>
+                <tr>
+                <td><input value="{{ i.cinemaname }}" disabled></td>
+                </tr>
+                <tr>
+                <td><input placeholder="{{ i.cinemalocation }}" disabled></td>
+                </tr>
+                <tr>
+
+
+                <td><input id="invisible" name="{{ form.cinemaid.html_name }}" value = "{{ i.cinemaid }}"> <input type="submit" class="button" value="Перейти" ></td>
+                </tr>
+                </tr>
+            </table>
+            </div>
+            </form>
+        {% endfor %}
+        </div>
+    </article>
+    </div>
+
+
+{% endblock %}

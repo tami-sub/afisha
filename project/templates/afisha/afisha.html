@@ -1,0 +1,52 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Afisha
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="/">Назад</a></button>
+        <h2>Афиша Фильмов в прокате</h2>
+    </div>
+
+    <div>
+        {% for i in cinema.values %}
+            <ul class="cinemahead">
+                <li>Кинотеатр: {{ i.cinemaname }}</li>
+                <li>Жанры: {% for t in  i.movie.keys %}
+                                             {{ t }}
+                                            {%endfor%}</li>
+            </ul>
+                           {% for k in i.movie.values %}
+
+
+                                     {% for j in k.values %}
+                                              <hr/>
+
+                                         <table id="afisha">
+                                         <tr>
+                                                <td>Название: {{ j.moviename }}</td>
+                                                <td>Жанр: {{ j.jenre }}</td>
+                                                <td>Формат: {{ j.dimension }}D</td>
+                                                <td>Хронометраж: {{ j.timing }}</td>
+                                                <td>Режиссер(ы): {{ j.directors }}</td>
+                                                <td>Актёры: {{ j.actors }}</td>
+                                                <td>Год: {{ j.year }}</td>
+                                                <td>Идентификатор кинотетра: {{ j.cinemaid }}</td>
+                                         </tr>
+                                         </table>
+
+                                        {% endfor %}
+                                   {% endfor %}
+                           {% endfor %}
+    </div>
+    </article>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    User
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+        <div class="back-exit">
+            <h2>Панель пользователя {{ temp.name }}</h2>
+            <button><a href="exit">Выход</a></button>
+        </div>
+
+        <hr/>
+
+        <div id="cinemalist">
+        {% for i in cinema.values %}
+            <form method="post">{% csrf_token %}
+            <div id="afisha">
+            <table>
+                <tr>
+                <td><input value="{{ i.cinemaname }}" disabled></td>
+                </tr>
+
+                <tr>
+                <td><input placeholder="{{ i.cinemalocation }}" disabled></td>
+                </tr>
+
+                <tr>
+                <td> <select id="day" name="{{ form.day.html_name }}">
+                    <option id="day" value="Вся неделя">Вся неделя</option>
+                    <option id="day" value="Понедельник">Понедельник</option>
+                    <option id="day" value="Вторник">Вторник</option>
+                    <option id="day" value="Среда">Среда</option>
+                    <option id="day" value="Четверг">Четверг</option>
+                    <option id="day"  value="Пятница">Пятница</option>
+                    <option id="day"  value="Суббота">Суббота</option>
+                    <option id="day" value="Воскресенье">Воскресенье</option>
+                </select> </td>
+                </tr>
+
+                <tr>
+                <td><input id="invisible" name="{{ form.cinemaid.html_name }}" value = "{{ i.cinemaid }}"> <input type="submit" class="button" value="Перейти" ></td>
+                </tr>
+                </tr>
+            </table>
+            </div>
+            </form>
+        {% endfor %}
+        </div>
+    </article>
+    </div>
+
+
+{% endblock %}

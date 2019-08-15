@@ -1,0 +1,64 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Add cinema
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+
+    <div class="back-button">
+        <button><a href="adminpanel">Назад</a></button>
+        <h2>Добавить кинотеатр</h2>
+
+    </div>
+
+        <hr/>
+        <form method="post">{% csrf_token %}
+            <div id="register">
+                <div>
+                    <label  >Название Кинотеатра: </label>
+                    <input type="text" name="{{ form.cinemaname.html_name }}" maxlength="100" required>
+                </div>
+                <div>
+                    <label  >Местоположение: </label>
+                    <input  type="text" name="{{ form.cinemalocation.html_name }}" maxlength="100" required>
+                </div>
+
+                <div>
+                    <label >Номер идентификатора: </label>
+                    <input type="number" name="{{ form.cinemaid.html_name }}" maxlength="100" required>
+                </div>
+
+                <input class="button" id="ok" type="submit" value="OK">
+            </div>
+
+            <span id="razv" onclick='wrt("{% for i in cinema.values %}\n"+
+                "                     <ul>\n"+
+                "                        <hr/>                      \n"+
+                "                        <li> Название кинотетра: {{ i.cinemaname }}</li>\n"+
+                "                        <li> Местоположение: {{ i.cinemalocation }}</li>\n"+
+                "                        <li> Идентификатор: {{ i.cinemaid }}</li>\n"+
+                "                     </ul>\n"+
+                "                    {% endfor %}");'>/Список кинотетров/</span>
+            <br>
+            <span id="sver" onclick='wrt("");'></span>
+
+{#            <div>#}
+{#                    {% for i in cinema.values %}#}
+{#                     <ul>#}
+{#                        <li> Название: {{ i.cinemaname }}</li>#}
+{#                        <li> Местоположение: {{ i.cinemaid }}</li>#}
+{#                        <li> Номер идентификатора: {{ i.cinemaid }}</li>#}
+{#                     </ul>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+
+        </form>
+    </article>
+    </div>
+
+
+{% endblock %}

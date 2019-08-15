@@ -1,0 +1,40 @@
+{% extends "afisha/wrapper.html" %}
+
+{% block target %}
+    Schedule
+{% endblock %}
+
+{% block content %}
+
+    <div id="content-box">
+    <article>
+<div class="back-button">
+            <button ><a href="userpanel">Назад</a></button>
+            <h2>Кинотеатр: {{ dayschedule.cinemaname }}</h2>
+        </div>
+        <hr/>
+
+{#        <div id="cinemalist">#}
+        <h2>День недели: {{ dayschedule.schedule.day}}</h2>
+{#        </div>#}
+
+        {% for i in dayschedule.schedule.values %}
+            {% if i.keys != day %}
+            <table id="afisha">
+                <tr>
+                    <td>{{ i.moviename}}</td>
+                    <td>Жанр: {{ i.jenre }}</td>
+                    <td>{{ i.dimension }}D</td>
+                    <td>Хронометраж: {{ i.time}} мин.</td>
+                    <td>Год: {{ i.year }}</td>
+                    <td>Цена билета: {{ i.price }}р.</td>
+
+                </tr>
+            </table>
+            {% endif %}
+         {% endfor %}
+    </article>
+    </div>
+
+
+{% endblock %}
